@@ -2,6 +2,14 @@
   "name": "pre-test",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && npx eslint src/**/*.ts{,x}"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -16,18 +24,14 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+
   "browserslist": {
     "production": [
       ">0.2%",
