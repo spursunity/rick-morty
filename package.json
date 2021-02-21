@@ -37,8 +37,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged && yarn lint"
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npx pretty-quick --staged && yarn lint"
     }
   },
   "browserslist": {
