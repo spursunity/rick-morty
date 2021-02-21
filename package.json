@@ -25,13 +25,21 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
+    "husky": "^5.0.9",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
   },
-
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
