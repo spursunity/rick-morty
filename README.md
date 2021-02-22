@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Pre-test react app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Eslint
 
-## Available Scripts
+**Packages:**
 
-In the project directory, you can run:
+```
+"@typescript-eslint/eslint-plugin": "^4.15.1",
+"@typescript-eslint/parser": "^4.15.1",
+```
 
-### `yarn start`
+Add _.eslintrc.js_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prettier
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Packages:**
 
-### `yarn test`
+```
+"eslint-config-prettier": "^7.2.0",
+"eslint-plugin-prettier": "^3.3.1",
+"prettier": "^2.2.1",
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add _.prettierrc.js_
 
-### `yarn build`
+## Husky
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Packages:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+"husky": "^5.0.9",
+"pretty-quick": "^3.1.0",
+"@commitlint/cli": "^11.0.0",
+"@commitlint/config-conventional": "^11.0.0",
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Add script _"postinstall": "husky install"_
 
-### `yarn eject`
+Call commands _npx husky add .husky/commit-msg "npx commitlint -E HUSKY_GIT_PARAMS"_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Call commands _npx husky add .husky/pre-commit "npx pretty-quick --staged && npm run lint"_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Next:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   add redux
+-   add redux-saga
+-   add hook useInView
+-   add tests
