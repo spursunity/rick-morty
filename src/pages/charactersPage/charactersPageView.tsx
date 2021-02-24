@@ -3,8 +3,9 @@ import { useInView } from 'react-intersection-observer';
 
 import { LoadingComponent } from 'components';
 import { ICharacterInfo } from 'shared/interfaces/store';
+import { CharacterItemComponent } from './components/characterItemComponent';
 
-export interface ICharactersPageProps {
+interface ICharactersPageProps {
     isInitLoading: boolean;
     charactersList: ICharacterInfo[];
     nextPageUrl: string | null;
@@ -38,13 +39,7 @@ export const CharactersPageView: React.FC<ICharactersPageProps> = ({
         <div>
             {charactersList?.map((character, index) => {
                 const ref = index === charactersList.length - 1 ? lastRowRef : null;
-                return (
-                    <div key={character.id} ref={ref}>
-                        <img width={50} height={50} src={character.avatarSrc} alt="Avatar" />
-                        <b>{character.name}</b>
-                        <hr />
-                    </div>
-                );
+                return <CharacterItemComponent key={character.id} character={character} rowRef={ref} />;
             }) || 'Oops, no characters :('}
         </div>
     );
