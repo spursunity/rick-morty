@@ -20,11 +20,17 @@ export const getInitCharactersPage: TCharactersAction = () => ({
 
 export const addCharacters: TCharactersAction = (response) => {
     const charactersList =
-        response?.data?.results?.map(({ id, image: avatarSrc, name }: any) => ({
-            id,
-            avatarSrc,
-            name,
-        })) || [];
+        response?.data?.results?.map(
+            ({ id, image: avatarSrc, name, status, species, type: characterType, gender }: any) => ({
+                id,
+                avatarSrc,
+                name,
+                status,
+                species,
+                characterType,
+                gender,
+            }),
+        ) || [];
     const payload = {
         charactersList,
         nextPageUrl: response?.data?.info?.next,

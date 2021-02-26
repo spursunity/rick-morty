@@ -6,6 +6,10 @@ export interface ICharacterInfo {
     id: number;
     avatarSrc: string;
     name: string;
+    status: string;
+    species: string;
+    characterType: string;
+    gender: string;
 }
 
 export interface ICharactersState {
