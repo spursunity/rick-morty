@@ -1,0 +1,12 @@
+$not_found_color: #9461bd;
+
+.not-found-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $not_found_color;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+}

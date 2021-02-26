@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { CharactersPageContainer } from 'pages';
+import { CharactersPageContainer, NotFoundPage } from 'pages';
+import { GridLayout } from 'layouts';
 
 export const App: React.FC = () => {
     return (
-        <div>
+        <GridLayout>
             <Switch>
-                <Route path="/" component={CharactersPageContainer} />
+                <Route exact path="/" component={CharactersPageContainer} />
+                <Route path="**" component={NotFoundPage} />
             </Switch>
-        </div>
+        </GridLayout>
     );
 };

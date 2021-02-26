@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { LoadingComponent } from 'components';
 import { ICharacterInfo } from 'shared/interfaces/store';
 import { CharacterItemComponent } from './components/characterItemComponent';
-import { GridLayout } from 'layouts';
 
 interface ICharactersPageProps {
     isInitLoading: boolean;
@@ -37,13 +36,11 @@ export const CharactersPageView: React.FC<ICharactersPageProps> = ({
         return <LoadingComponent />;
     }
     return (
-        <GridLayout>
-            <div>
-                {charactersList?.map((character, index) => {
-                    const ref = index === charactersList.length - 1 ? lastRowRef : null;
-                    return <CharacterItemComponent key={character.id} character={character} rowRef={ref} />;
-                }) || 'Oops, no characters :('}
-            </div>
-        </GridLayout>
+        <div>
+            {charactersList?.map((character, index) => {
+                const ref = index === charactersList.length - 1 ? lastRowRef : null;
+                return <CharacterItemComponent key={character.id} character={character} rowRef={ref} />;
+            }) || 'Oops, no characters :('}
+        </div>
     );
 };

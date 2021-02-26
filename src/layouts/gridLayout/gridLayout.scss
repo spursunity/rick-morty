@@ -5,7 +5,7 @@ $main_color: #155dd1;
     height: 100vh;
     display: grid;
     grid-template-columns: 4rem 1fr;
-    grid-template-rows: minmax(4rem, auto) auto minmax(4rem, auto);
+    grid-template-rows: 4rem auto 4rem;
 
     header,
     footer {
