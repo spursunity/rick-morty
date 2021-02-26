@@ -32,6 +32,9 @@ $main_color: #155dd1;
             &:hover {
                 opacity: 0.5;
             }
+            a:-webkit-any-link {
+                color: $main_color;
+            }
         }
     }
     &-content {

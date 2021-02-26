@@ -9,6 +9,7 @@ interface ICharactersAction {
 const initialState: ICharactersState = {
     startLoading: true,
     charactersList: [],
+    currentCharacter: null,
     nextPageUrl: null,
 };
 
@@ -24,6 +25,11 @@ export const charactersReducer = (state = initialState, action: ICharactersActio
                 ...state,
                 charactersList: [...state.charactersList, ...(action?.payload?.charactersList || [])],
                 nextPageUrl: action.payload?.nextPageUrl || null,
+            };
+        case ECharactersActionTypes.setCurrentCharacter:
+            return {
+                ...state,
+                currentCharacter: action.payload?.currentCharacter?.id ? { ...action.payload?.currentCharacter } : null,
             };
         default:
             return state;

@@ -5,6 +5,7 @@ export enum ECharactersActionTypes {
     addCharactersPage = 'ADD_CHARACTERS',
     getNextCharactersPage = 'GET_NEXT_CHARACTERS_PAGE',
     successStartLoading = 'SUCCESS_START_LOADING',
+    setCurrentCharacter = 'SET_CURRENT_CHARACTER',
 }
 
 type TCharactersAction = (data?: any) => { type: ECharactersActionTypes; payload?: Partial<ICharactersState> };
@@ -35,4 +36,9 @@ export const addCharacters: TCharactersAction = (response) => {
 export const getNextCharactersPage: TCharactersAction = (nextPageUrl) => ({
     type: ECharactersActionTypes.getNextCharactersPage,
     payload: { nextPageUrl },
+});
+
+export const setCurrentCharacter: TCharactersAction = (currentCharacter) => ({
+    type: ECharactersActionTypes.setCurrentCharacter,
+    payload: { currentCharacter },
 });

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { getInitCharactersPage, getNextCharactersPage } from 'store/actions';
+import { ICharacterInfo } from 'shared/interfaces/store';
+import { getInitCharactersPage, getNextCharactersPage, setCurrentCharacter } from 'store/actions';
 import { RootState } from 'store/reducers';
 import { CharactersPageView } from './charactersPageView';
 
@@ -17,6 +18,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     },
     getNextCharactersPage: (nextPageUrl: string) => {
         dispatch(getNextCharactersPage(nextPageUrl));
+    },
+    setCurrentCharacter: (currentCharacter: ICharacterInfo) => {
+        dispatch(setCurrentCharacter(currentCharacter));
     },
 });
 

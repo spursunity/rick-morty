@@ -2,19 +2,18 @@ import React from 'react';
 
 import './characterItemComponent.scss';
 import { AVATAR_CHARACTER_ALT, AVATAR_CHARACTER_SIZE } from 'shared/constants';
+import { ICharacterInfo } from 'shared/interfaces/store';
 
 interface ICharacterItemComponentProps {
-    character: {
-        id: number;
-        avatarSrc: string;
-        name: string;
-    };
+    character: ICharacterInfo;
     rowRef: ((node?: Element | null) => void) | null;
+    setCurrentCharacter: (currentCharacter: ICharacterInfo) => void | undefined;
 }
 
 const CharacterItem: React.FC<ICharacterItemComponentProps> = ({
-    character: { avatarSrc, name },
+    character,
     rowRef,
+    setCurrentCharacter,
 }: ICharacterItemComponentProps) => {
     const avatarSize = AVATAR_CHARACTER_SIZE.min;
     const avatarAlt = AVATAR_CHARACTER_ALT;
@@ -25,10 +24,13 @@ const CharacterItem: React.FC<ICharacterItemComponentProps> = ({
                 className="character-item__avatar"
                 width={avatarSize}
                 height={avatarSize}
-                src={avatarSrc}
+                src={character.avatarSrc}
                 alt={avatarAlt}
+                onClick={() => setCurrentCharacter(character)}
             />
-            <b>{name}</b>
+            <b className="character-item__name" onClick={() => setCurrentCharacter(character)}>
+                {character.name}
+            </b>
         </div>
     );
 };

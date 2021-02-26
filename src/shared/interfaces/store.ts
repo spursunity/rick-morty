@@ -11,5 +11,6 @@ export interface ICharacterInfo {
 export interface ICharactersState {
     startLoading: boolean;
     charactersList: ICharacterInfo[];
+    currentCharacter: ICharacterInfo | null;
     nextPageUrl: string | null;
 }
